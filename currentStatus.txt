@@ -1,0 +1,3 @@
+Sending a Push Notification
+
+The starter kit includes a folder called WenderCastPush; inside are two simple scripts that send push notifications. The one you will be using is newspush.php. As its name suggests, this script sends breaking news to your users.
