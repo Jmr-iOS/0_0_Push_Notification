@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return;
     }
     
-    func registerForPushNotifications(_ application: UIApplication) {
+    @objc func registerForPushNotifications(_ application: UIApplication) {
         let notificationSettings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil);
         
         application.registerUserNotificationSettings(notificationSettings);
