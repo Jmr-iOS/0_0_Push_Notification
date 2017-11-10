@@ -28,11 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?;
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds);
+        self.window = UIWindow.init(frame: UIScreen.main.bounds);
         
-        self.window?.backgroundColor = UIColor.whiteColor();
+        self.window?.backgroundColor = UIColor.white;
         
         let viewController:ViewController = ViewController();
         
@@ -45,38 +45,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Push Notification Enable - Override point for customization after application launch.
         application.registerForRemoteNotifications();
-        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert, categories: nil));
-        self.registerForPushNotifications(UIApplication.sharedApplication());
+        application.registerUserNotificationSettings(UIUserNotificationSettings(types: .alert, categories: nil));
+        self.registerForPushNotifications(UIApplication.shared);
         
         print("AppDelegate.application():          Application launch complete");
         
         return true;
     }
 
-    func applicationWillResignActive(application: UIApplication)    { return; }
-    func applicationDidEnterBackground(application: UIApplication)  { return; }
-    func applicationWillEnterForeground(application: UIApplication) { return; }
-    func applicationDidBecomeActive(application: UIApplication)     { return; }
-    func applicationWillTerminate(application: UIApplication)       { return; }
+    func applicationWillResignActive(_ application: UIApplication)    { return; }
+    func applicationDidEnterBackground(_ application: UIApplication)  { return; }
+    func applicationWillEnterForeground(_ application: UIApplication) { return; }
+    func applicationDidBecomeActive(_ application: UIApplication)     { return; }
+    func applicationWillTerminate(_ application: UIApplication)       { return; }
 
 //Push Notification Stuff
-    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print(error);
         return;
     }
     
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print(deviceToken);
         return;
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotificationuserInfo: [NSObject : AnyObject]) {
+    @objc(application:didReceiveRemoteNotification:) func application(_ application: UIApplication, didReceiveRemoteNotification didReceiveRemoteNotificationuserInfo: [AnyHashable: Any]) {
         //print(userInfo);
         return;
     }
     
-    func registerForPushNotifications(application: UIApplication) {
-        let notificationSettings = UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil);
+    func registerForPushNotifications(_ application: UIApplication) {
+        let notificationSettings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil);
         
         application.registerUserNotificationSettings(notificationSettings);
         

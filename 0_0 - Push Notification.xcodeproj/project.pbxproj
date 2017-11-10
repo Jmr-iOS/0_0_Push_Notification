@@ -123,6 +123,7 @@
 					D039B4B51BF4D7950024005F = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = HRCQBX7PVQ;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -268,6 +269,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaostech.pushnotification;
 				PRODUCT_NAME = "0_0 - Push Notification";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -280,6 +282,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaostech.pushnotification;
 				PRODUCT_NAME = "0_0 - Push Notification";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
